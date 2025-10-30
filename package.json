@@ -1,0 +1,32 @@
+{
+  "name": "block-explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin": {
+    "block-explorer": "./cli.js",
+    "be": "./cli.js"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+   "keywords": ["blockchain", "cli", "explorer", "private", "permissioned"],
+  "author": "Devansh Shrivastava",
+  "license": "ISC",
+  "type": "commonjs",
+    "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.6"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "figlet": "^1.9.3" 
+  },
+
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/devansh0331/IITBhilai_BlockExplorer.git"
+  }
+}
