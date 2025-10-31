@@ -6,16 +6,17 @@
   "bin": "cli.js",
 
    "scripts": {
-    "build:win": "pkg cli.js --target node18-win-x64 --output bin/block-explorer.exe",
-    "build:mac": "pkg cli.js --target node18-macos-x64 --output bin/block-explorer-macos",
-    "build:linux": "pkg cli.js --target node18-linux-x64 --output bin/block-explorer-linux",
-    "build:all": "npm run build:win && npm run build:mac && npm run build:linux"
+     "build": "pkg . --out-path dist"
   },
    "pkg": {
-    "assets": [
-      "node_modules/figlet/fonts/**/*"
-    ]
-  },
+  "targets": [
+    "node18-linux-x64",
+    "node18-win-x64",
+    "node18-macos-x64"
+  ],
+  "outputPath": "dist"
+},
+
    "keywords": ["blockchain", "cli", "explorer", "private", "permissioned"],
   "author": "Devansh Shrivastava",
   "license": "ISC",
