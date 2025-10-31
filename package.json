@@ -2,14 +2,19 @@
   "name": "block-explorer",
   "version": "1.0.0",
   "description": "",
-  "main": "cli.js",
-  "bin": {
-    "block-explorer": "./cli.js",
-    "be": "./cli.js"
-  },
+   "main": "cli.js",
+  "bin": "cli.js",
 
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "scripts": {
+    "build:win": "pkg cli.js --target node18-win-x64 --output bin/block-explorer.exe",
+    "build:mac": "pkg cli.js --target node18-macos-x64 --output bin/block-explorer-macos",
+    "build:linux": "pkg cli.js --target node18-linux-x64 --output bin/block-explorer-linux",
+    "build:all": "npm run build:win && npm run build:mac && npm run build:linux"
+  },
+   "pkg": {
+    "assets": [
+      "node_modules/figlet/fonts/**/*"
+    ]
   },
    "keywords": ["blockchain", "cli", "explorer", "private", "permissioned"],
   "author": "Devansh Shrivastava",
@@ -17,7 +22,8 @@
   "type": "commonjs",
     "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.6"
+    "hardhat": "^2.22.6",
+      "pkg": "^5.8.1"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
